@@ -1,35 +1,53 @@
 package com.codecomrades.Driver;
 
 import com.codecomrades.entity.Product;
-import com.codecomrades.entity.Reviews;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 
+import java.util.Scanner;
+
 public class User {
+    private static EntityManagerFactory emf;
+    private static EntityManager em;
+    private static EntityTransaction et;
+    private static Scanner sc;
+
+
+    static {
+        emf = Persistence.createEntityManagerFactory("ManyToOne");
+        em = emf.createEntityManager();
+        et=em.getTransaction();
+        sc= new Scanner(System.in);
+    }
     public static void main(String[] args) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("ManyToOne");
-        EntityManager em = emf.createEntityManager();
-        EntityTransaction et  = em.getTransaction();
+
+
+        boolean flag = true;
+        while(true){
+            System.out.println("Enter the Option u want to Perform");
+            System.out.println("1.addProduct\n2.addReviewForProduct");
+            int choice = sc.nextInt();
+            switch (choice){
+                case 1:
+                    addProduct();
+            }
+        }
+    }
+
+
+    public static void addProduct(){
         Product p1 = new Product();
-        p1.setP_id(1);
-        p1.setP_name("Nike Shoes");
-        p1.setP_price(2699);
-
-
-        Reviews r1 = new Reviews();
-        r1.setR_id(121);
-        r1.setTitle("Very Good Product");
-        r1.setProduct(p1);
-
-
+        System.out.println("Enter the product Name");
+        sc.nextLine();
+        p1.setP_name(sc.nextLine());
+        System.out.println("Enter the Product Price");
+        p1.setP_price(sc.nextInt());
         et.begin();
         em.persist(p1);
-        em.persist(r1);
         et.commit();
-
-
-
+        System.out.println("Data Saved");
     }
+    
 }
