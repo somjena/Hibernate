@@ -1,13 +1,12 @@
 package com.codecomrades.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 
 
 @Entity
 public class Reviews {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int r_id;
     private String title;
     @ManyToOne
