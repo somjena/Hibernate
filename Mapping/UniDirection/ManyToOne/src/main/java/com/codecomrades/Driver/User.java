@@ -26,7 +26,7 @@ public class User {
         boolean flag = true;
         while(true){
             System.out.println("Enter the Option u want to Perform");
-            System.out.println("1.AddProduct\n2.AddReviewForProduct\n3.DeleteReview");
+            System.out.println("1.AddProduct\n2.AddReviewForProduct\n3.DeleteReview\n4.Getdetailsreviewbyid");
             int choice = sc.nextInt();
             switch (choice){
                 case 1:
@@ -97,11 +97,13 @@ public class User {
         }
     }
     private static void getdetailsbyid() {
-        System.out.println("Enter the Product id U want to Search");
-        Product product = em.find(Product.class, sc.nextInt());
-        if (product!=null){
-            System.out.println("Here is the Details ||->");
-            System.out.println(product.getP_name()+ " "+product.getP_id());
+        System.out.println("Enter the Review  id U want to Search");
+        Reviews reviews= em.find(Reviews.class,sc.nextInt());
+        if(reviews!=null){
+            Product product =reviews.getProduct();
+            System.out.println(product.getP_name() +" "+product.getP_price());
+            System.out.println("Review -->"+reviews.getTitle());
         }
+
     }
 }
