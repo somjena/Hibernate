@@ -10,6 +10,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/codecomrades/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/codecomrades/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codecomrades/entity/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/codecomrades/entity/Reviews.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codecomrades/entity/Reviews.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../OneToMany/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OneToMany/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
