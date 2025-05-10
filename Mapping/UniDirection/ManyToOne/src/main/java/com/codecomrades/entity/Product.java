@@ -1,14 +1,16 @@
 package com.codecomrades.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 @Entity
 public class Product {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int p_id;
     private String p_name;
     private int p_price;
