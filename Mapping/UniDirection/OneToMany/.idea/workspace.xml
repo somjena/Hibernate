@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09fdae16-c117-4db1-8fb5-b11597b2fbfc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../ManyToOne/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ManyToOne/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ManyToOne/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ManyToOne/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ManyToOne/src/main/java/com/codecomrades/Driver/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ManyToOne/src/main/java/com/codecomrades/entity/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ManyToOne/src/main/java/com/codecomrades/entity/Reviews.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ManyToOne/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ManyToOne/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ManyToOne/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ManyToOne/src/main/java/com/codecomrades/Driver/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ManyToOne/src/main/java/com/codecomrades/Driver/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ManyToOne/src/main/java/com/codecomrades/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ManyToOne/src/main/java/com/codecomrades/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ManyToOne/src/main/java/com/codecomrades/entity/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ManyToOne/src/main/java/com/codecomrades/entity/Reviews.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ManyToOne/src/main/java/com/codecomrades/entity/Reviews.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
