@@ -35,9 +35,16 @@ public class Driver {
                 case 4:DeleteSubjectForStudent();
                 break;
                 case 5:UpdateStudent();
+                break;
+                case 6:UpdateSubject();
+                break;
                 
             }
         }
+    }
+
+    private static void UpdateSubject() {
+        System.out.println();
     }
 
     private static void UpdateStudent() {
