@@ -44,7 +44,7 @@ public class Driver {
     }
 
     private static void UpdateSubject() {
-        System.out.println();
+        System.out.println("Enter the Subject Id U want to Updte");
     }
 
     private static void UpdateStudent() {
