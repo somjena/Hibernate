@@ -1,11 +1,14 @@
 package com.codecomrades.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
 public class Subjects {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int sub_id;
     private String sub_name;
     private int sub_duration;
