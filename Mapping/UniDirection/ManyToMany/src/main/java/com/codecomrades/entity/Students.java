@@ -1,17 +1,16 @@
 package com.codecomrades.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.*;
 
 import java.util.List;
 
 @Entity
 public class Students {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int s_id;
     private String s_name;
-    private String age;
+    private int age;
     @ManyToMany
     private List<Subjects>subjectsList;
 
@@ -32,11 +31,11 @@ public class Students {
         this.s_name = s_name;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
