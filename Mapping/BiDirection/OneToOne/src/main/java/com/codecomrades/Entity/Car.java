@@ -1,7 +1,9 @@
 package com.codecomrades.Entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Car {
@@ -9,6 +11,8 @@ public class Car {
     private int c_id;
     private String c_name;
     private int c_price;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Engine engine;
 
     public int getC_id() {
         return c_id;
@@ -32,5 +36,13 @@ public class Car {
 
     public void setC_price(int c_price) {
         this.c_price = c_price;
+    }
+
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
     }
 }
