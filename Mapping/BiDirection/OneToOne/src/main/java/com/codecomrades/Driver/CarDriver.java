@@ -18,21 +18,22 @@ public class CarDriver {
     }
     public static void main(String[] args) {
         Car car1 = new Car();
-        car1.setC_id(1);
-        car1.setC_name("Fortuner");
-        car1.setC_price(4993564);
+        car1.setC_id(2);
+        car1.setC_name("Alto");
+        car1.setC_price(499355);
 
         Engine e1 = new Engine();
         e1.setCar(car1);
-        e1.setE_id(101);
-        e1.setE_type("Diesel");
-        e1.setE_cc(2599);
+        e1.setE_id(102);
+        e1.setE_type("Petrol");
+        e1.setE_cc(1200);
 
         car1.setEngine(e1);
 
 
         et.begin();
         em.persist(car1);
+        System.out.println("Data Saved");
         et.commit();
 
 
