@@ -1,13 +1,11 @@
 package com.codecomrades.Entity;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 
 @Entity
 public class Car {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int c_id;
     private String c_name;
     private int c_price;
@@ -44,5 +42,15 @@ public class Car {
 
     public void setEngine(Engine engine) {
         this.engine = engine;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "c_id=" + c_id +
+                ", c_name='" + c_name + '\'' +
+                ", c_price=" + c_price +
+                ", engine=" + engine +
+                '}';
     }
 }
