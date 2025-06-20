@@ -1,13 +1,11 @@
 package com.codecomrades.Entity;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 
 @Entity
 public class Engine {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int e_id;
     private String e_type;
     private int e_cc;
@@ -44,5 +42,15 @@ public class Engine {
 
     public void setE_cc(int e_cc) {
         this.e_cc = e_cc;
+    }
+
+    @Override
+    public String toString() {
+        return "Engine{" +
+                "e_id=" + e_id +
+                ", e_type='" + e_type + '\'' +
+                ", e_cc=" + e_cc +
+                ", car=" + car +
+                '}';
     }
 }
