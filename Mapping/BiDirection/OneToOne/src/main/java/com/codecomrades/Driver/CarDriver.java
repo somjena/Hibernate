@@ -1,5 +1,7 @@
 package com.codecomrades.Driver;
 
+import com.codecomrades.Entity.Car;
+import com.codecomrades.Entity.Engine;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
@@ -50,6 +52,24 @@ public class CarDriver {
     }
 
     private static void save() {
-        System.out.println("Save Method Invoked");
+        Car c = new Car();
+        Engine e = new Engine();
+        System.out.println("Enter the Car name");
+        sc.nextLine();
+        c.setC_name(sc.nextLine());
+        System.out.println("Enter the Car Price");
+        c.setC_price(sc.nextInt());
+        System.out.println("Enter the Engine type");
+        sc.nextLine();
+        e.setE_type(sc.nextLine());
+        System.out.println("Enter the Engine CC");
+        e.setE_cc(sc.nextInt());
+        c.setEngine(e);
+        e.setCar(c);
+        et.begin();
+        em.persist(c);
+        et.commit();
+
+        System.out.println("Data Saved SuccessFully");
     }
 }
