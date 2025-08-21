@@ -67,7 +67,7 @@ public class CarDriver {
         c.setEngine(e);
         e.setCar(c);
         et.begin();
-        em.persist(c);
+        em.persist(c);//Here we Save Only Car But it Will Save Both the Entity Because We Use Cascade Type
         et.commit();
 
         System.out.println("Data Saved SuccessFully");
