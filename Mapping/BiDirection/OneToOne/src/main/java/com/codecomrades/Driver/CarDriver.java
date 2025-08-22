@@ -2,11 +2,9 @@ package com.codecomrades.Driver;
 
 import com.codecomrades.Entity.Car;
 import com.codecomrades.Entity.Engine;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.EntityTransaction;
-import jakarta.persistence.Persistence;
+import jakarta.persistence.*;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class CarDriver {
@@ -35,6 +33,9 @@ public class CarDriver {
                 break;
                 case 3:Update();
                 break;
+                case 4:SearchbyId();
+                break;
+                case 5:Findall();
 
             }
         }
@@ -43,8 +44,57 @@ public class CarDriver {
 
     }
 
+    private static void SearchbyId() {
+        System.out.println("Enter the Car id You Want to Find");
+        Car c =em.find(Car.class,sc.nextInt());
+        if(c==null){
+            System.out.println("No Data Records Are There for this Id");
+        }else{
+
+            Engine e =c.getEngine();
+            System.out.println("Car name :- "+c.getC_name() +"| Car id: -"+c.getC_id() +"| Car Price :- "+c.getC_price() +"| Engine Id :- "+e.getE_id()+"| Engine type :- "+e.getE_type() + "| Engine CC :- "+e.getE_cc());
+        }
+        }
+
+    private static void Findall() {
+        String s = "from Car";
+        Query q=em.createQuery(s);
+        List<Car> l =q.getResultList();
+        for (Car c : l){
+            Engine e = c.getEngine();
+            System.out.println("Car name :- "+c.getC_name() +"| Car id: -"+c.getC_id() +"| Car Price :- "+c.getC_price() +"| Engine Id :- "+e.getE_id()+"| Engine type :- "+e.getE_type() + "| Engine CC :- "+e.getE_cc());
+        }
+
+    }
+
     private static void Update() {
-        System.out.println("Update Method Invoked");
+
+        System.out.println("Enter the Car id U want to Update");
+        Car C=em.find(Car.class,sc.nextInt());
+        System.out.println("Enter the Choice U Want to Update");
+        System.out.println("1.Update_Name\n2.Update_Price");
+        int choice = sc.nextInt();
+        switch (choice){
+            case 1:
+                System.out.println("Enter the Name You Want to Update");
+                sc.nextLine();
+                C.setC_name(sc.nextLine());
+                et.begin();
+                em.persist(C);
+                et.commit();
+                System.out.println("Successfully Updated the Name Of The Car");
+                break;
+            case 2:
+                System.out.println("Enter the Price You Want to Update");
+                C.setC_price(sc.nextInt());
+                et.begin();
+                em.persist(C);
+                et.commit();
+                System.out.println("Successfully Car Price Update");
+        }
+
+
+
     }
 
     private static void delete() {
