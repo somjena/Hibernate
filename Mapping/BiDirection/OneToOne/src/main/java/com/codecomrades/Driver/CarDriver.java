@@ -36,6 +36,7 @@ public class CarDriver {
                 case 4:SearchbyId();
                 break;
                 case 5:Findall();
+                break;
 
             }
         }
@@ -72,7 +73,7 @@ public class CarDriver {
         System.out.println("Enter the Car id U want to Update");
         Car C=em.find(Car.class,sc.nextInt());
         System.out.println("Enter the Choice U Want to Update");
-        System.out.println("1.Update_Name\n2.Update_Price");
+System.out.println("1.Update_Name\n2.Update_Price\n3.EngineData");
         int choice = sc.nextInt();
         switch (choice){
             case 1:
@@ -91,6 +92,38 @@ public class CarDriver {
                 em.persist(C);
                 et.commit();
                 System.out.println("Successfully Car Price Update");
+                break;
+            case 3:Engine e =C.getEngine();
+                System.out.println("1.Update Engine id\n2.Update Engine CC\n3.Update Engine Type");
+                int upd = sc.nextInt();
+                switch (upd){
+                    case 1:
+                        System.out.println("Enter the Update id ");
+                        e.setE_id(sc.nextInt());
+                        et.begin();
+                        em.persist(e);
+                        et.commit();
+                        System.out.println("Engine id Update SuccessFully");
+                        break;
+                    case 2:
+                        System.out.println("Enter the CC U want To Update ");
+                        e.setE_cc(sc.nextInt());
+                        et.begin();
+                        em.persist(e);
+                        et.commit();
+                        System.out.println("Successfully Updated the Engine CC");
+                        break;
+                    case 3:
+                        System.out.println("Enter the Engine Type You Want to Update ");
+                        sc.nextLine();
+                        e.setE_type(sc.nextLine());
+                        et.begin();
+                        em.persist(e);
+                        et.commit();
+                        System.out.println("Engine Type Updated Successfully");
+                        break;
+                }
+
         }
 
 
@@ -98,7 +131,16 @@ public class CarDriver {
     }
 
     private static void delete() {
-        System.out.println("Delete Method Invoked");
+        System.out.println("Enter the Car Id You Want to Delete ");
+        Car c = em.find(Car.class,sc.nextInt());
+        if(c==null){
+            System.out.println("No Car Data Found ");
+        }else{
+            et.begin();
+            em.remove(c);
+            et.commit();
+            System.out.println("Both Car and The Id Deleted From The Data Base");
+        }
     }
 
     private static void save() {
